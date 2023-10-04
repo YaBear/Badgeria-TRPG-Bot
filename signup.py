@@ -5,11 +5,11 @@ class SignUp:
         self.conn = sqlite3.connect(db_name)
         self.cursor = self.conn.cursor()
 
-    def add_user(self, telegram_id, race, player_class):
+    def add_user(self, telegram_id):
         self.cursor.execute('''
-            INSERT INTO users (telegram_id, race, class)
-            VALUES (?, ?, ?)
-        ''', (telegram_id, race, player_class))
+            INSERT INTO users (telegram_id)
+            VALUES (?)
+        ''', (telegram_id,))
         self.conn.commit()
 
     def get_user(self, telegram_id):

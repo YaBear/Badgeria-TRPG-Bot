@@ -7,9 +7,7 @@ cursor = conn.cursor()
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
-    telegram_id INTEGER,
-    race TEXT,
-    class TEXT
+    telegram_id INTEGER
 )
 ''')
 conn.commit()
